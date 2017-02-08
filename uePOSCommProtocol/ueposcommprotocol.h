@@ -48,8 +48,8 @@ public:
      * \brief returns encoded <a href="http://doc.qt.io/qt-5/qbytearray.html#details">QByteArray</a> (const <a href="http://doc.qt.io/qt-5/qbytearray.html#details">QByteArray</a>&) command datagram
      * \details This method returns command message composed from command and parameters
      * \param[in] command protocol command
-     * \param[in] command data
-     * \param[out] data size
+     * \param[in] data
+     * \param[in] dataSize
      * \return encoded command
      */
     static const QByteArray& ueEncodeCommand(const UePosCommProtocolArch::UeCommand& command,
@@ -63,13 +63,24 @@ public:
      * \brief slices incoming message to command and data
      * \details This method converts incoming message into command and data
      * \param[in] message
-     * \param[in] date
+     * \param[out] data
      * \param[out] command
      * \return command and data
      */
     static const UePosCommProtocolArch::UeCommand& ueDecodeCommand(const QByteArray& message,
                                                                    QList<QVariant>& data);
 
+    /*!
+     * \author Marko Frelih
+     * \version alpha
+     * \date 20/07/2016
+     * \brief returns command name as string
+     * \details returns command name as string
+     * \param[in] command
+     * \param[in] date
+     * \param[out] command
+     * \return command and data
+     */
     /*!
      * @brief ueCommandToString
      * @param command
