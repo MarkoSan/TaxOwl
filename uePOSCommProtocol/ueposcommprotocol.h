@@ -81,11 +81,6 @@ public:
      * \param[out] command
      * \return command and data
      */
-    /*!
-     * @brief ueCommandToString
-     * @param command
-     * @return string representing command name
-     */
     static const QString& ueCommandToString(const UePosCommProtocolArch::UeCommand& command);
 };
 
