@@ -57,9 +57,15 @@ public:
                                              quint32& dataSize);
 
     /*!
-     * @brief ueDecodeCommand
-     * @param datagram
-     * @return decoded command
+     * \author Marko Frelih
+     * \version alpha
+     * \date 20/07/2016
+     * \brief slices incoming message to command and data
+     * \details This method converts incoming message into command and data
+     * \param[in] message
+     * \param[in] date
+     * \param[out] command
+     * \return command and data
      */
     static const UePosCommProtocolArch::UeCommand& ueDecodeCommand(const QByteArray& message,
                                                                    QList<QVariant>& data);
