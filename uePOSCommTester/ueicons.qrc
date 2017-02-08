@@ -1,0 +1,5 @@
+<RCC>
+    <qresource lang="English" prefix="/ueIcons">
+        <file>icons/ueNoPlaceImageIcon.png</file>
+    </qresource>
+</RCC>
