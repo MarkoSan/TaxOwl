@@ -26,25 +26,6 @@ namespace UePosCommProtocolArch
     };   // UeCommand
 
     /*!
-     * \enum UePosCommProtocolArch::UeCommandEnd
-     * \author Marko Frelih
-     * \version alpha
-     * \date 20/07/2016
-     * \brief Protocol commands
-     * \details a strongly typed enum class representing the commands ends in protocol datagram header
-     */
-//    enum class UeCommandEnd : quint8
-//    {
-//        END_CMD_INVALID_COMMAND=0xff,               /*!<0xff*/
-
-//        END_CMD_GET_NETWORK_SETTINGS=0xfe,          /*!<0xfe*/
-//        END_CMD_DATABASE_GET_PLACES=0xfd,           /*!<0xfd*/
-
-//        END_ACK_CMD_GET_NETWORK_SETTINGS=0xef,      /*!<0xef*/
-//        END_ACK_CMD_DATABASE_GET_PLACES=0xee,       /*!<0xee*/
-//    };   // UeCommandEnd
-
-    /*!
      * \enum UePosCommProtocolArch::UeMessageType
      * \author Marko Frelih
      * \version alpha
