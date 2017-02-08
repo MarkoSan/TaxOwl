@@ -43,28 +43,28 @@ HEADERS  += uemainwindow.h \
     database/models/uequeries.h \
     net/ueclient.h
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../uePOSCommProtocol/build/x64/debug/release/ -luePOSCommProtocol
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../uePOSCommProtocol/build/x64/debug/debug/ -luePOSCommProtocol
-else:unix: LIBS += -L$$PWD/../uePOSCommProtocol/build/x64/debug/ -luePOSCommProtocol
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../uePOSCommProtocol/build/x64/debug/release/ -luePOSCommProtocol
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../uePOSCommProtocol/build/x64/debug/debug/ -luePOSCommProtocol
+#else:unix: LIBS += -L$$PWD/../uePOSCommProtocol/build/x64/debug/ -luePOSCommProtocol
 
-INCLUDEPATH += $$PWD/../uePOSCommProtocol
-DEPENDPATH += $$PWD/../uePOSCommProtocol
+#INCLUDEPATH += $$PWD/../uePOSCommProtocol
+#DEPENDPATH += $$PWD/../uePOSCommProtocol
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/release/libuePOSCommProtocol.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/debug/libuePOSCommProtocol.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/release/uePOSCommProtocol.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/debug/uePOSCommProtocol.lib
-else:unix: PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/libuePOSCommProtocol.a
+#win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/release/libuePOSCommProtocol.a
+#else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/debug/libuePOSCommProtocol.a
+#else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/release/uePOSCommProtocol.lib
+#else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/debug/uePOSCommProtocol.lib
+#else:unix: PRE_TARGETDEPS += $$PWD/../uePOSCommProtocol/build/x64/debug/libuePOSCommProtocol.a
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../ueSyntaxHiglighter/build/x64/debug/release/ -lueSyntaxHiglighter
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../ueSyntaxHiglighter/build/x64/debug/debug/ -lueSyntaxHiglighter
-else:unix: LIBS += -L$$PWD/../ueSyntaxHiglighter/build/x64/debug/ -lueSyntaxHiglighter
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../ueSyntaxHiglighter/build/x64/debug/release/ -lueSyntaxHiglighter
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../ueSyntaxHiglighter/build/x64/debug/debug/ -lueSyntaxHiglighter
+#else:unix: LIBS += -L$$PWD/../ueSyntaxHiglighter/build/x64/debug/ -lueSyntaxHiglighter
 
-INCLUDEPATH += $$PWD/../ueSyntaxHiglighter
-DEPENDPATH += $$PWD/../ueSyntaxHiglighter
+#INCLUDEPATH += $$PWD/../ueSyntaxHiglighter
+#DEPENDPATH += $$PWD/../ueSyntaxHiglighter
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/release/libueSyntaxHiglighter.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/debug/libueSyntaxHiglighter.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/release/ueSyntaxHiglighter.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/debug/ueSyntaxHiglighter.lib
-else:unix: PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/libueSyntaxHiglighter.a
+#win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/release/libueSyntaxHiglighter.a
+#else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/debug/libueSyntaxHiglighter.a
+#else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/release/ueSyntaxHiglighter.lib
+#else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/debug/ueSyntaxHiglighter.lib
+#else:unix: PRE_TARGETDEPS += $$PWD/../ueSyntaxHiglighter/build/x64/debug/libueSyntaxHiglighter.a
