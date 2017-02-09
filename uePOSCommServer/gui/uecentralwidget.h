@@ -6,7 +6,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 
-#include "../ueSyntaxHiglighter/uelogwindow.h"
+#include "../ueSyntaxHighlighter/uelogwindow.h"
 #include "../uePOSCommProtocol/ueposcommprotocol.h"
 
 class UeCentralWidget : public QWidget

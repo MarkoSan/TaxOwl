@@ -21,7 +21,7 @@
 #include <QDebug>
 
 #include "../uePOSCommProtocol/ueposcommprotocol.h"
-#include "../ueSyntaxHiglighter/uelogwindow.h"
+#include "../ueSyntaxHighlighter/uelogwindow.h"
 #include "../uePOSCommProtocol/uedefaults.h"
 #include "net/uenetworkdiscoverysocket.h"
 #include "net/uedatatransfersocket.h"

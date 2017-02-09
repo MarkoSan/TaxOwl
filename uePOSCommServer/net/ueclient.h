@@ -11,7 +11,7 @@
 #include <QDataStream>
 
 #include "../uePOSCommProtocol/ueposcommprotocol.h"
-#include "../ueSyntaxHiglighter/uelogentrytype.h"
+#include "../ueSyntaxHighlighter/uelogentrytype.h"
 #include "uetask.h"
 #include "settings/uesettings.h"
 

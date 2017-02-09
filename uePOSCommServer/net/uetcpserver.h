@@ -8,8 +8,8 @@
 #include <QDateTime>
 
 #include "ueclient.h"
-#include "../ueSyntaxHiglighter/uelogentrytype.h"
-#include "../ueSyntaxHiglighter/uelogwindow.h"
+#include "../ueSyntaxHighlighter/uelogentrytype.h"
+#include "../ueSyntaxHighlighter/uelogwindow.h"
 
 class UeSettings;
 

@@ -18,7 +18,7 @@
 #include "gui/uecentralwidget.h"
 #include "gui/ueconnectedclientstablewidget.h"
 
-#include "../ueSyntaxHiglighter/uelogwindow.h"
+#include "../ueSyntaxHighlighter/uelogwindow.h"
 
 #include "net/uetcpserver.h"
 #include "net/uetask.h"
