@@ -67,12 +67,8 @@ void UeTask::run()
 
                             if(fieldName.contains("IMAGE"))
                             {
-//                                qDebug() << Q_FUNC_INFO
-//                                         << QJsonValue(QString::fromLatin1(query.value(fieldIndex).toByteArray().toBase64()));
-                                //RESOLVED QJsonValue::fromVariant cuts of everyting after 10th byte
-                                //BUG object with error sending QJsonParseError::UnterminatedObject on receive side
                                 jsonObject.insert(query.record().fieldName(fieldIndex),
-                                                  QJsonValue(QString::fromLatin1(query.value(fieldIndex).toByteArray()/*.toBase64()*/)));
+                                                  QJsonValue(QString::fromLatin1(query.value(fieldIndex).toByteArray())));
                             }
                             else
                             {
@@ -86,7 +82,6 @@ void UeTask::run()
 
                     jsonDocument.setArray(jsonArray);
 
-//                    fetchedData=jsonDocument.toJson();
                     fetchedData=jsonDocument.toBinaryData();
                 }
                 else

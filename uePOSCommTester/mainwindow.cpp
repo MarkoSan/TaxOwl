@@ -79,8 +79,5 @@ void MainWindow::ueSlotShowPlacesView()
 
 void MainWindow::ueSlotUpdatePlacesView(const QJsonDocument& newData)
 {
-//    qDebug() << Q_FUNC_INFO
-//             << newData;
-
     dynamic_cast<UeJsonPlacesTableModel*>(this->uePlacesViewDialog()->uePlacesTableView()->model())->ueSetJsonData(newData);
 }   // ueSlotUpdatePlacesView

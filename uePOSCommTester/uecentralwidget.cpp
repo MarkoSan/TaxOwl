@@ -33,7 +33,6 @@ UeCentralWidget::UeCentralWidget(QWidget *parent)
     dynamic_cast<QHBoxLayout*>(this->ueButtonsLayout())->addWidget(this->ueClearButton());
     dynamic_cast<QHBoxLayout*>(this->ueButtonsLayout())->addWidget(this->ueQuitButton());
 
-//    dynamic_cast<QVBoxLayout*>(this->layout())->addWidget(this->ueCommandsEditor());
     dynamic_cast<QVBoxLayout*>(this->layout())->addWidget(this->ueCommTextEditor());
     dynamic_cast<QVBoxLayout*>(this->layout())->addLayout(this->ueOptionsLayout());
     dynamic_cast<QVBoxLayout*>(this->layout())->addLayout(this->ueButtonsLayout());
@@ -264,12 +263,7 @@ void UeCentralWidget::ueSlotReadDataTransferSocketData()
                                                                                                                        .append(" ")
                                                                                                                        .append(tr("sent from server"))));
 
-                    QJsonParseError* jsonParseError=new QJsonParseError();
-                    QJsonDocument jsonDocument=QJsonDocument::fromJson(incomingData[3].toByteArray(),
-                                                                       jsonParseError);
-                    QByteArray dataFromJsonDocument=jsonDocument.toBinaryData();
-
-                    emit this->ueSignalNewDataArrivedPlaces(jsonDocument);
+                    emit this->ueSignalNewDataArrivedPlaces(QJsonDocument::fromBinaryData(incomingData[3].toByteArray()));
                 }
                 else
                 {
