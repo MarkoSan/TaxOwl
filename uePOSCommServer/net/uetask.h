@@ -192,10 +192,10 @@ protected:
 
 signals:
     /*!
-     * \brief ueSignalTaskFinished
-     * \param executedCommand
-     * \param fetchedData
-     * \param commandParameters
+     * \brief[in] ueSignalTaskFinished
+     * \param[in] executedCommand
+     * \param[in] fetchedData
+     * \param[in] commandParameters
      */
     void ueSignalTaskFinished(const UePosCommProtocolArch::UeCommand& executedCommand,
                               const QByteArray& fetchedData,

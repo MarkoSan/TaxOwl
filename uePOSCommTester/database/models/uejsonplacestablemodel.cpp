@@ -26,8 +26,9 @@ void UeJsonPlacesTableModel::ueSetJsonData(const QJsonDocument& jsonData)
             dataArray)
     {
         QByteArray floorImageByteArray=record.toObject().value(record.toObject().keys().at(0)).toVariant().toByteArray();
-
         QPixmap floorImage;
+
+        floorImageByteArray=QByteArray::fromBase64(floorImageByteArray);
 
         if(!floorImage.loadFromData(floorImageByteArray))
         {

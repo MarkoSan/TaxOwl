@@ -104,15 +104,6 @@ private:
         { this->m_ueButtonsLayout=layout; }
 
     /*!
-     * @brief ueSetCommandEditor
-     * @param editor
-     */
-/*
-    inline void ueSetCommandsEditor(UeLogWindow* const editor)
-        { this->m_ueCommandsEditor=editor; }
-*/
-
-    /*!
      * @brief ueSetHexCheckBox
      * @param box
      */

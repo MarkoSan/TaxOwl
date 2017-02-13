@@ -8,8 +8,6 @@ UeCentralWidget::UeCentralWidget(QWidget *parent)
     this->ueSetButtonsLayout(new QHBoxLayout());
     this->ueSetOptionsLayout(new QHBoxLayout());
 
-//    this->ueSetCommandsEditor(new UeLogWindow(this));
-
     this->ueSetCommTextEditor(new UeLogWindow(this));
     this->ueCommTextEditor()->setReadOnly(true);
 
@@ -113,15 +111,11 @@ UeCentralWidget::UeCentralWidget(QWidget *parent)
 
 void UeCentralWidget::ueSlotHexModeClick(int state)
 {
-//    qDebug() << Q_FUNC_INFO
-//             << state;
+    Q_UNUSED(state);
 }   // ueSlotHexModeClick
 
 void UeCentralWidget::ueSlotDirectSendClick(int state)
 {
-//    qDebug() << Q_FUNC_INFO
-//             << state;
-
     this->ueSendButton()->setVisible(state==Qt::Checked?false:true);
 }   // ueSlotDirectSendClick
 
@@ -327,18 +321,6 @@ void UeCentralWidget::ueSlotDataTransferSocketConnected()
     parameters.append(QHostInfo::localHostName());
     parameters.append(QSysInfo::prettyProductName());
 
-//    qDebug() << Q_FUNC_INFO
-//             << QSysInfo::buildAbi()
-//             << QSysInfo::buildCpuArchitecture()
-//             << QSysInfo::currentCpuArchitecture()
-//             << QSysInfo::kernelType()
-//             << QSysInfo::kernelVersion()
-//             << QSysInfo::macVersion()
-//             << QSysInfo::prettyProductName()
-//             << QSysInfo::productType()
-//             << QSysInfo::productVersion()
-//             << QSysInfo::windowsVersion();
-
     this->ueCommTextEditor()->appendPlainText(this->ueCommTextEditor()->ueCreateLogEntry(UeLogEntryType::INFO,
                                                                                          tr("Data transfer socket connected to server")));
     if(this->ueDataTransferSocket()->write(UePOSCommProtocol::ueEncodeCommand(UePosCommProtocolArch::UeCommand::ACK_CMD_GET_NETWORK_SETTINGS,
@@ -365,8 +347,6 @@ void UeCentralWidget::ueSlotDataTransferSocketConnected()
                                                                                                                         .append(this->ueNetworkDiscoverySocket()->errorString())
                                                                                                                         .append(")")));
     }   // if
-
-    //this->ueDataTransferSocket()->disconnectFromHost();
 }   // ueSlotCommunicationsSocketConnected
 
 void UeCentralWidget::ueSlotDataTransferSocketDisconnected()

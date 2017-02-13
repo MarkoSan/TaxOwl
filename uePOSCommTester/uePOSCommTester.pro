@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     uecommandsdockwidget.cpp \
     database/models/uejsonplacestablemodel.cpp \
     gui/ueplacestableview.cpp \
-    gui/ueplacestabledialog.cpp
+    gui/ueplacestabledialog.cpp \
+    net/uedatareadertask.cpp
 
 HEADERS  += mainwindow.h \
     uecentralwidget.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     uecommandsdockwidget.h \
     database/models/uejsonplacestablemodel.h \
     gui/ueplacestableview.h \
-    gui/ueplacestabledialog.h
+    gui/ueplacestabledialog.h \
+    net/uedatareadertask.h
 
 RESOURCES += \
     ueicons.qrc

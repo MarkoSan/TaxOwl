@@ -31,6 +31,10 @@ void UeClient::ueSetSocket(const qintptr& socketDescriptor)
             SIGNAL(readChannelFinished()),
             this,
             SLOT(ueSlotReadFinished()));
+    connect(this->ueSocket(),
+            SIGNAL(bytesWritten(qint64)),
+            this,
+            SLOT(ueSlotBytesWritten(qint64)));
 
     this->ueSocket()->setSocketDescriptor(socketDescriptor);
 }   // ueSetSocket
@@ -72,6 +76,13 @@ void UeClient::ueSlotReadyRead()
     QThreadPool::globalInstance()->start(ueTask);
 }   // ueSlotReadyRead
 
+void UeClient::ueSlotBytesWritten(qint64 bytes)
+{
+    qDebug() << Q_FUNC_INFO
+             << "bytes written: "
+             << bytes;
+}   // ueSlotBytesWritten
+
 void UeClient::ueSlotFetchData(const UePosCommProtocolArch::UeCommand& executedCommand,
                                const QByteArray& fetchedData,
                                const QList<QVariant>& parameters)
@@ -94,13 +105,7 @@ void UeClient::ueSlotFetchData(const UePosCommProtocolArch::UeCommand& executedC
                                                                        data,
                                                                        dataSize);
 
-            QDataStream outDataStream(this->ueSocket());
-
-            outDataStream.setVersion(QDataStream::Qt_5_7);
-
-            if(outDataStream.writeRawData(replyCommand,
-                                          replyCommand.size())>0)
-//            if(this->ueSocket()->write(replyCommand))
+            if(this->ueSocket()->write(replyCommand))
             {
                 if(dataSize==static_cast<int>(UePosCommProtocolArch::UeCommandNumberOfParameters::ACK_CMD_DATABASE_GET_PLACES))
                 {

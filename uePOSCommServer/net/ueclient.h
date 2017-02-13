@@ -105,10 +105,16 @@ public slots:
     void ueSlotReadyRead();
 
     /*!
+     * \brief ueSlotBytesWritten
+     * \param bytes
+     */
+    void ueSlotBytesWritten(qint64 bytes);
+
+    /*!
      * \brief ueSlotFetchData
-     * \param executedCommand
-     * \param fetchedData
-     * \param parameters
+     * \param[in] executedCommand
+     * \param[in] fetchedData
+     * \param[in] parameters
      */
     void ueSlotFetchData(const UePosCommProtocolArch::UeCommand& executedCommand,
                          const QByteArray& fetchedData,

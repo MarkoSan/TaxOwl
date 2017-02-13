@@ -68,7 +68,7 @@ void UeTask::run()
                             if(fieldName.contains("IMAGE"))
                             {
                                 jsonObject.insert(query.record().fieldName(fieldIndex),
-                                                  QJsonValue(QString::fromLatin1(query.value(fieldIndex).toByteArray())));
+                                                  QJsonValue(QString::fromLatin1(query.value(fieldIndex).toByteArray().toBase64())));
                             }
                             else
                             {
