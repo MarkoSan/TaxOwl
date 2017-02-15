@@ -107,6 +107,9 @@ UeCentralWidget::UeCentralWidget(QWidget *parent)
             SIGNAL(disconnected()),
             this,
             SLOT(ueSlotDataTransferSocketDisconnected()));
+
+    this->ueSetDataReaderTask(new UeDataReaderTask(this->ueDataTransferSocket(),
+                                                   this));
 }   // constructor
 
 void UeCentralWidget::ueSlotHexModeClick(int state)

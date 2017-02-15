@@ -25,6 +25,7 @@
 #include "../uePOSCommProtocol/uedefaults.h"
 #include "net/uenetworkdiscoverysocket.h"
 #include "net/uedatatransfersocket.h"
+#include "net/uedatareadertask.h"
 
 /*!
  * @brief The UeCentralWidget class
@@ -88,6 +89,11 @@ private:
      * @brief m_ueDataTransferSocket
      */
     UeDataTransferSocket* m_ueDataTransferSocket;
+
+    /*!
+     * \brief m_ueDataReaderTask
+     */
+    UeDataReaderTask* m_ueDataReaderTask;
 
     /*!
      * @brief ueSetOptionsLayout
@@ -158,6 +164,13 @@ private:
      */
     inline void ueSetDataTransferSocket(UeDataTransferSocket* const socket)
         { this->m_ueDataTransferSocket=socket; }
+
+    /**
+     * @brief ueSetDataReaderTask
+     * @param task
+     */
+    inline void ueSetDataReaderTask(UeDataReaderTask* const task)
+        { this->m_ueDataReaderTask=task; }
 
 public:
     /*!
@@ -244,6 +257,13 @@ public:
      */
     inline UeDataTransferSocket* ueDataTransferSocket() const
         { return this->m_ueDataTransferSocket; }
+
+    /**
+     * @brief ueDataReaderTask
+     * @return pointer to object representing data reader task (thread)
+     */
+    inline UeDataReaderTask* ueDataReaderTask() const
+        { return this->m_ueDataReaderTask; }
 
 signals:
     /**

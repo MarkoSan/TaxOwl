@@ -9,6 +9,7 @@
 #include <QVariant>
 #include <QByteArray>
 #include <QDataStream>
+#include <QDebug>
 
 #include "../net/uedatatransfersocket.h"
 
@@ -62,6 +63,16 @@ public slots:
      * \brief ueSlotReadIncomingData
      */
     void ueSlotReadIncomingData();
+
+    /**
+     * @brief ueSlotDataTransferTaskStarted
+     */
+    void ueSlotDataTransferTaskStarted();
+
+    /**
+     * @brief ueSlotDataTransferTaskFinished
+     */
+    void ueSlotDataTransferTaskFinished();
 };
 
 #endif // UEDATAREADERTASK_H

@@ -10,7 +10,7 @@
 #include "ueclient.h"
 #include "../ueSyntaxHighlighter/uelogentrytype.h"
 #include "../ueSyntaxHighlighter/uelogwindow.h"
-#include "settings/uesettingsdefaults.h""
+#include "settings/uesettingsdefaults.h"
 
 /*!
  * @brief The UeTcpServer class

@@ -10,10 +10,18 @@ UeDataReaderTask::UeDataReaderTask(UeDataTransferSocket* const dataTransferSocke
     m_ueInputDataStream.setDevice(this->ueDataTransferSocket());
     m_ueInputDataStream.setVersion(QDataStream::Qt_5_8);
 
+    connect(this,
+            &QThread::started,
+            this,
+            &UeDataReaderTask::ueSlotDataTransferTaskStarted);
     connect(this->ueDataTransferSocket(),
             &QIODevice::readyRead,
             this,
             &UeDataReaderTask::ueSlotReadIncomingData);
+    connect(this,
+            &QThread::finished,
+            this,
+            &UeDataReaderTask::ueSlotDataTransferTaskFinished);
 }   // constructor
 
 UeDataReaderTask::~UeDataReaderTask()
@@ -22,14 +30,33 @@ UeDataReaderTask::~UeDataReaderTask()
 
 void UeDataReaderTask::run()
 {
+    this->ueDataTransferSocket()->waitForReadyRead();
+}   // run
+
+void UeDataReaderTask::ueSlotReadIncomingData()
+{
+    QByteArray readData;
+
     m_ueInputDataStream.startTransaction();
 
-    if(!m_ueInputDataStream.commitTransaction())
+    m_ueInputDataStream >> readData;
+
+    if(m_ueInputDataStream.commitTransaction())
+    {
+        qDebug() << Q_FUNC_INFO
+                 << "readData.size(): "
+                 << readData.size();
+    }
+    else
     {
         return;
     }   // if
-}   // run
-
-void UeDataReaderTaskueSlotReadIncomingData()
-{
 }   // ueSlotReadIncomingData
+
+void UeDataReaderTask::ueSlotDataTransferTaskStarted()
+{
+}   // ueSlotDataTransferTaskStarted
+
+void UeDataReaderTask::ueSlotDataTransferTaskFinished()
+{
+}   // ueSlotDataTransferTaskFinished
